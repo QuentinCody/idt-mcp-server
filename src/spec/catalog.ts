@@ -11,8 +11,7 @@ export const idtCatalog: ApiCatalog = {
         "- Free IDT account required for API access (register at idtdna.com)\n" +
         "- 500 req/min rate limit\n" +
         "- Codon optimization and complexity scoring are the primary tools\n" +
-        "- For codon optimization, prefer the idt_codon_optimize hand-built tool\n" +
-        "- For complexity scoring, prefer the idt_complexity_check hand-built tool",
+        "- Code Mode only — use idt_search + idt_execute for all queries",
     endpoints: [
         // Codon Optimization
         {
@@ -20,7 +19,6 @@ export const idtCatalog: ApiCatalog = {
             path: "/CodonOpt/Optimize",
             summary: "Optimize codons for a protein sequence for a target organism. Returns optimized DNA sequence.",
             category: "codon_optimization",
-            coveredByTool: "idt_codon_optimize",
             bodyParams: [
                 { name: "proteinSequences", type: "array", required: true, description: "Array of { Name, Sequence } objects with protein sequences" },
                 { name: "organism", type: "string", required: true, description: "Target organism (e.g. 'Homo sapiens', 'Escherichia coli K12')" },
@@ -33,7 +31,6 @@ export const idtCatalog: ApiCatalog = {
             path: "/Complexities/ScreenGBlockSequences",
             summary: "Screen DNA sequences for synthesis complexity and manufacturability",
             category: "complexity",
-            coveredByTool: "idt_complexity_check",
             bodyParams: [
                 { name: "sequences", type: "array", required: true, description: "Array of { Name, Sequence } objects with DNA sequences" },
             ],

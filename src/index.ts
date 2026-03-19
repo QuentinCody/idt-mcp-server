@@ -3,8 +3,6 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { registerQueryData } from "./tools/query-data";
 import { registerGetSchema } from "./tools/get-schema";
 import { registerCodeMode } from "./tools/code-mode";
-import { registerCodonOptimize } from "./tools/codon-optimize";
-import { registerComplexityCheck } from "./tools/complexity-check";
 import { IdtDataDO } from "./do";
 
 export { IdtDataDO };
@@ -24,8 +22,6 @@ export class MyMCP extends McpAgent {
 
     async init() {
         const env = this.env as unknown as IdtEnv;
-        registerCodonOptimize(this.server, env);
-        registerComplexityCheck(this.server, env);
         registerQueryData(this.server, env);
         registerGetSchema(this.server, env);
         registerCodeMode(this.server, env);
