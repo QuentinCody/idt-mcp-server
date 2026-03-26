@@ -6,7 +6,7 @@ interface QueryEnv {
     IDT_DATA_DO?: unknown;
 }
 
-export function registerQueryData(server: McpServer, env?: QueryEnv) {
+export function registerQueryData(server: McpServer, env?: QueryEnv): void {
     const handler = createQueryDataHandler("IDT_DATA_DO", "idt");
 
     server.registerTool(

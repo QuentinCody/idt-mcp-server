@@ -6,7 +6,7 @@ interface SchemaEnv {
     IDT_DATA_DO?: unknown;
 }
 
-export function registerGetSchema(server: McpServer, env?: SchemaEnv) {
+export function registerGetSchema(server: McpServer, env?: SchemaEnv): void {
     const handler = createGetSchemaHandler("IDT_DATA_DO", "idt");
 
     server.registerTool(

@@ -11,7 +11,7 @@ interface IdtEnv {
     IDT_CLIENT_SECRET?: string;
 }
 
-export function registerCodonOptimize(server: McpServer, env?: IdtEnv) {
+export function registerCodonOptimize(server: McpServer, env?: IdtEnv): void {
     server.registerTool(
         "idt_codon_optimize",
         {

@@ -11,7 +11,7 @@ interface IdtEnv {
     IDT_CLIENT_SECRET?: string;
 }
 
-export function registerComplexityCheck(server: McpServer, env?: IdtEnv) {
+export function registerComplexityCheck(server: McpServer, env?: IdtEnv): void {
     server.registerTool(
         "idt_complexity_check",
         {

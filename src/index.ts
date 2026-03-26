@@ -15,7 +15,7 @@ interface IdtEnv {
 }
 
 export class MyMCP extends McpAgent {
-    server: any = new McpServer({
+    server = new McpServer({
         name: "idt",
         version: "0.1.0",
     });
