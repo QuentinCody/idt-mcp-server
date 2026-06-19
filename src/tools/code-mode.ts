@@ -25,6 +25,8 @@ export function registerCodeMode(
 
     const executeTool = createExecuteTool({
         prefix: "idt",
+        // Verifiable provenance: idt_execute results carry a _meta.citation.
+        source: { id: "idt", name: "Integrated DNA Technologies (IDT)", url: "https://www.idtdna.com" },
         catalog: idtCatalog,
         apiFetch,
         doNamespace: env.IDT_DATA_DO,
